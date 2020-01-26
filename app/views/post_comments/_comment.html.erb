@@ -1,0 +1,38 @@
+<h3>コメント</h3>
+<div style="text-align: center;">
+	<%= form_for [post, post_comment] do |f| %>
+	  <%= f.text_area :comment, class: "form-control", placeholder: "コメント" %><br>
+	  <%= f.submit "投稿", class: "btn btn-default" %>
+	<% end %>
+</div>
+
+<h3>コメント一覧（<%= post.post_comments.count %>）</h3>
+<table class="table" style="table-layout:fixed;width:100%;">
+	<thead>
+		<tr>
+			<th>User</th>
+			<th>date</th>
+			<th>comment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= post.post_comments.each do |f| %>
+		<tr>
+			<td>
+				<%= link_to f.user.name, user_path(f.user) %>
+			</td>
+			<td>
+				<%= f.created_at.strftime('%Y/%m/%d') %>
+			</td>
+			<td style="word-wrap:break-word;">
+				<%= f.comment %>
+			</td>
+			<% if f.user == current_user %>
+			  <td>
+			  	<%= link_to '削除', post_post_comment_path(post,f), method: :delete, class: "btn btn-danger" %>
+			  </td>
+			<% end %>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

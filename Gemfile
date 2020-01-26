@@ -66,11 +66,14 @@ gem 'devise'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
+gem 'bootstrap-sass'
 gem 'jquery-rails'
 
-gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 5.4.1'
 
 gem 'jp_prefecture'
 gem 'dotenv-rails'
+
+
 
 

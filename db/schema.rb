@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_19_092259) do
+ActiveRecord::Schema.define(version: 2020_01_25_052036) do
 
   create_table "likes", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_01_19_092259) do
     t.integer "point_id"
     t.string "title"
     t.text "body"
-    t.string "main_image"
+    t.string "main_image_id"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -68,21 +68,17 @@ ActiveRecord::Schema.define(version: 2020_01_19_092259) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "point_id"
-    t.string "name_last_kanji", default: "", null: false
-    t.string "name_first_kanji", default: "", null: false
-    t.string "name_last_kana", default: "", null: false
-    t.string "name_first_kana", default: "", null: false
     t.string "nick_name"
-    t.integer "age"
     t.string "gender"
     t.string "phone_number"
     t.string "postal_code"
     t.string "prefecture"
     t.string "city"
     t.string "street"
-    t.string "profile_image"
     t.text "introduction"
+    t.string "name"
+    t.string "age"
+    t.string "profile_image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

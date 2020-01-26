@@ -1,3 +1,32 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.profile {
+	margin-top: 50px;
+}
+.profile-headline {
+	margin: 0 50px 10px 0;
+	float: left;
+}
+
+.user-index-headline {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.user-name-index {
+	color: black;
+	margin-top: 10px;
+	text-decoration: none;
+}
+
+.profile-table {
+	margin-left: 50px;
+}
+
+.user-post {
+	margin-top: 70px;
+}
+

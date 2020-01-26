@@ -1,0 +1,63 @@
+<div class="body">
+	<a href="/">
+		<img src="../../assets/DiveLink_logo.png" width="250px">
+	</a>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3" style="text-align: center;">
+				<div class="form-area">
+					<h2>マイページ編集</h2>
+					<%= form_for(@user) do |f| %>
+					  <table class="table">
+					  	<tr>
+					  		<th>名前</th>
+					  		<td><%= f.text_field :name, class: "form-control", style:"width: 70%;" %></td>
+					  	</tr>
+					  	<tr>
+					  		<th>ニックネーム</th>
+					  		<td><%= f.text_field :nick_name, class: "form-control", style:"width: 70%;" %></td>
+					  	</tr>
+					  	<tr>
+					  		<th>年代</th>
+					  		<td><%= f.select :age, ["20代", "30代", "40代", "50代", "60代", "70代以上"], :prompt => "選択する" %></td>
+					  	</tr>
+					  	<tr>
+					  		<th>性別</th>
+					  		<td><%= f.select :gender, ["男", "女"], :prompt => "選択する" %></td>
+					  	</tr>
+					  	<tr>
+					  		<th>郵便番号</th>
+					  		<td><%= f.text_field :postal_code, class: "form-control", style:"width: 70%;", placeholder: "ハイフンなし" %></td>
+					  	</tr>
+					  	<tr>
+					  		<th>都道府県</th>
+					  		<td><%= f.collection_select :prefecture, JpPrefecture::Prefecture.all, :name, :name, id: "user_prefecture" %></td>
+					  	</tr>
+					  	<tr>
+					  		<th>市町村</th>
+					  		<td><%= f.text_field :city, id: "user_city", class: "form-control", style:"width: 70%;" %></td>
+					  	</tr>
+					  	<tr>
+					  		<th>丁番地建物名</th>
+					  		<td><%= f.text_field :street, id: "user_street", class: "form-control", style:"width: 70%;" %></td>
+					  	</tr>
+					  	<tr>
+					  		<th>プロフィール画像</th>
+					  		<td><%= f.attachment_field :profile_image, placeholder: "image" %></td>
+					  	</tr>
+					  	<tr>
+					  		<th>自己紹介文</th>
+					  		<td><%= f.text_area :introduction, class: "form-control", style:"width: 70%;" %></td>
+					  	</tr>
+					  </table>
+					  <%= f.submit '保存', class: "btn btn-default" %><br><br>
+					  <%= link_to 'マイページへ戻る', user_path(current_user) %>
+
+
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,35 @@
+<div class="body">
+  <a href="/">
+    <img src="../assets/DiveLink_logo.png" width="250px">
+  </a>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3" style="text-align: center;">
+        <div class="login-form">
+          <h2 class="devise-headline">ログイン</h2>
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+            <table class="table">
+              <tr>
+                <th>ニックネーム</th>
+                <td><%= f.text_field :name, autofocus: true, autocomplete: "nick_name", class: "form-control", style:"width: 70%;" %></td>
+              </tr>
+              <tr>
+                <th>Eメールアドレス</th>
+                <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", style:"width: 70%;" %></td>
+              </tr>
+              <tr>
+                <th>パスワード</th>
+                <td><%= f.password_field :password, autocomplete: "current-password", class: "form-control", style:"width: 70%;" %></td>
+              </tr>
+            </table>
+            <%= f.submit "ログイン", class: "btn btn-default" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

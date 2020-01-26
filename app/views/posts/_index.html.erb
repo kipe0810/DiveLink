@@ -1,0 +1,16 @@
+<div class="col-xs-10 col-xs-offset-1">
+	<% posts.each do |f| %>
+		<div style="float: left; margin: 0 15px 30px 15px;">
+		  <%= link_to post_path(f.id) do %>
+		    <%= image_tag attachment_url(f, :main_image, :fill, 200, 200, fallback: "no_image.png"), size:'200x200' %>
+		    <h3 class="post-title-index"><strong><%= f.title %></strong></h3>
+		  <% end %>
+		  <%= f.created_at.strftime('%Y/%m/%d %H:%M') %>
+		  <span style="float: right;">
+		  	<i class="fas fa-heart" style="color: red;"></i> <%= f.likes.count %>
+		  	<i class="fas fa-comment" style="color: blue;"></i> <%= f.post_comments.count %>
+		  </span><br>
+		  <%=link_to f.user.name, user_path(f.user) %>
+		 </div>
+	<% end %>
+</div>

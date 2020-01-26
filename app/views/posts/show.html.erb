@@ -1,2 +1,30 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<%= render 'layouts/header' %>
+<div class="main-image">
+	<%= image_tag attachment_url(@post, :main_image, :fill, 1440, 670, fallback: "no_image.png"), size: '1440x670' %>
+	<h3 class="date"><strong><%= @post.created_at.strftime('%Y/%m/%d') %></strong></h3>
+	<h1 class="title"><strong><%= @post.title %></strong></h1>
+	<%= link_to user_path(@post.user.id) do %>
+	  <h4 class="post-user"><%= image_tag attachment_url(@post.user, :profile_image, :fill, 30, 30, fallback: "no_image.png"), size: '30x30' %> <%= @post.user.nick_name %></h4>
+	<% end %>
+	<div class="edit">
+		<% if @post.user == current_user %>
+	  	<%= link_to '編集', edit_post_path(@post), class: "btn btn-success" %>
+	  	<%= link_to '削除', post_path, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-danger"  %>
+	  <% end %>
+	</div>
+	<div class="like"><strong>
+		<%= render 'likes/likes', post: @post %>
+	</strong></div>
+</div>
+<div class="post-body">
+	<div class="row">
+		<div class="col-xs-7 col-xs-offset-1">
+			<div>
+				<p><%= @post.body %></p>
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<%= render 'post_comments/comment', post: @post, post_comment: @post_comment %>
+	  </div>
+	</div>
+</div>
