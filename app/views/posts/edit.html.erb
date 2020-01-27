@@ -1,6 +1,6 @@
 <div class="body">
 	<a href="/">
-		<img src="/assets/DiveLink_logo.png" width="250px">
+		<img src="<%= asset_path "DiveLink_logo.png" %>" width="250px">
 	</a>
 	<div class="container">
 		<div class="row">
@@ -19,11 +19,12 @@
 					  	</tr>
 					  	<tr>
 					  		<th>本文</th>
-					  		<td><%= f.text_area :body, class: "form-control", style: "width: 70%;" %></td>
+					  		<td><%= f.text_area :body, class: "form-control", style: "width: 100%; height: 400px;" %></td>
 					  	</tr>
 					  </table>
-					  <%= f.submit '保存', class: "btn btn-default" %>
+					  <%= f.submit '保存', class: "btn btn-default" %><br><br>
 					<% end %>
+					<%= link_to 'ブログへ戻る', post_path(@post) %>
 				</div>
 			</div>
 		</div>

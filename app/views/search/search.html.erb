@@ -1,0 +1,32 @@
+<%= render 'layouts/header' %>
+
+<div class="container">
+	<div class="row">
+		<h1 class="search-headline">検索結果</h1>
+		<div class="col-xs-10 col-xs-offset-1">
+
+			<% if @model == "User" %>
+				<% if @search.blank? %>
+				    <h4 class="search-result">Userを全件表示しています</h4>
+				    <% @users.each do |f| %>
+			        <%= render 'users/index', users: f %>
+			      <% end %>
+				<% else %>
+				    <h4 class="search-result">"<%= @search %>"の検索結果（User）</h4>
+				    <% @searching.each do |f| %>
+				      <%= render 'users/index', users: f %>
+				    <% end %>
+				<% end %>
+			<% elsif @model == "Post" %>
+				<% if @search.blank? %>
+				    <h4 class="search-result">Blogを全件表示しています</h4>
+				    <%= render 'posts/index', posts: @posts %>
+				<% else %>
+				    <h4 class="search-result">"<%= @search %>"の検索結果（Blog）</h4>
+					<%= render 'posts/index', posts: @searching %>
+				<% end %>
+			<% end %>
+
+	</div>
+	</div>
+</div>

@@ -1,6 +1,6 @@
 <div class="body">
   <a href="/">
-    <img src="../assets/DiveLink_logo.png" width="250px">
+    <img src="<%= asset_path "DiveLink_logo.png" %>" width="250px">
   </a>
   <div class="container">
     <div class="row">
@@ -13,18 +13,19 @@
             <table class="table">
               <tr>
                 <th>ニックネーム</th>
-                <td><%= f.text_field :name, autofocus: true, autocomplete: "nick_name", class: "form-control", style:"width: 70%;" %></td>
+                <td><%= f.text_field :nick_name, autofocus: true, autocomplete: "nick_name", class: "form-control", style:"width: 70%;" %></td>
               </tr>
               <tr>
                 <th>Eメールアドレス</th>
-                <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", style:"width: 70%;" %></td>
+                <td><%= f.email_field :email, autocomplete: "email", class: "form-control", style:"width: 70%;" %></td>
               </tr>
               <tr>
                 <th>パスワード</th>
                 <td><%= f.password_field :password, autocomplete: "current-password", class: "form-control", style:"width: 70%;" %></td>
               </tr>
             </table>
-            <%= f.submit "ログイン", class: "btn btn-default" %>
+            <%= f.submit "ログイン", class: "btn btn-default" %><br><br>
+            <%= link_to "新規登録画面へ", new_user_registration_path %>
           <% end %>
         </div>
       </div>

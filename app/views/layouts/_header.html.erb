@@ -1,7 +1,7 @@
 <header class="container">
   <div class="clearfix">
     <a href="/">
-      <img src="/assets/DiveLink_logo.png" width="250px" style="position: absolute; top: 0px;">
+      <img src="<%= asset_path "DiveLink_logo.png" %>" width="250px" style="position: absolute; top: 0px;">
     </a>
     <% if user_signed_in? %>
       <span class="login">
@@ -30,5 +30,10 @@
       <span><strong><%= link_to 'New Blog', new_post_path %></strong></span>
     <% end %>
   </div>
+  <%= render 'search/search' %>
 </header>
 <div class="header-border"></div>
+
+
+
+

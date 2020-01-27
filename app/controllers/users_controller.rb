@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!,  only: [:edit, :update]
+  before_action :current_user!, only: [:edit, :update]
 
 	def index
     @users = User.all
@@ -37,7 +39,14 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image, :age, :gender, :email, :password, :nick_name, :postal_code, :prefecture, :city, :street)
+    params.require(:user).permit(:name, :introduction, :profile_image, :age, :gender, :email, :password, :nick_name, :postal_code, :prefecture, :city, :street, :number, :license)
+  end
+
+  def current_user!
+    user = User.find(params[:id])
+    if user != current_user
+      redirect_to user_path(current_user.id)
+    end
   end
 
 end

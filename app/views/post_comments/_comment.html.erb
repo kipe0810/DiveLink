@@ -16,7 +16,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<%= post.post_comments.each do |f| %>
+		<% post.post_comments.each do |f| %>
 		<tr>
 			<td>
 				<%= link_to f.user.name, user_path(f.user) %>

@@ -1,13 +1,31 @@
-<% if post.liked_by?(current_user) %>
-  <div>
-    <%= link_to post_likes_path(post), method: :delete do %>
-      <span style="color: white;">いいね！ <%= post.likes.count %> <i class="fas fa-heart" style="color: red;"></i></span>
-    <% end %>
-  </div>
+<% if signed_in? %>
+  <% if post.liked_by?(current_user) %>
+    <div>
+      <%= link_to likes_path(post) do %>
+        <span style="color: white;">いいね！ <%= post.likes.count %> </span>
+      <% end %>
+      <%= link_to post_likes_path(post), method: :delete do %>
+        <i class="fas fa-heart" style="color: red;"></i>
+      <% end %>
+    </div>
+  <% else %>
+    <div>
+      <%= link_to likes_path(post) do %>
+        <span style="color: white;">いいね！ <%= post.likes.count %> </span>
+      <% end %>
+      <%= link_to post_likes_path(post), method: :post do %>
+        <i class="fas fa-heart" style="color: white;"></i>
+      <% end %>
+    </div>
+  <% end %>
 <% else %>
   <div>
-    <%= link_to post_likes_path(post), method: :post do %>
-      <span style="color: white;">いいね <%= post.likes.count %> <i class="fas fa-heart" style="color: white;"></i></span>
+    <%= link_to likes_path(post) do %>
+      <span style="color: white;">いいね！<%= post.likes.count %></span>
+    <% end %>
+    <%= link_to new_user_session_path do %>
+       <i class="fas fa-heart" style="color: white;"></i>
     <% end %>
   </div>
 <% end %>
+

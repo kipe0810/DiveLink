@@ -34,3 +34,14 @@ header {
 .header-border {
 	border-bottom: solid 1px gray;
 }
+
+#search {
+	width: 100px;
+}
+
+.search-form {
+	float: right;
+	position: relative;
+	top: 20px;
+	right: 30px;
+}

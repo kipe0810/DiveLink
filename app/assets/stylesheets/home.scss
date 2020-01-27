@@ -42,14 +42,14 @@
 	}
 
 	.image-box:nth-child(1) {
-		background-image: url(../assets/kame.JPG);
+		background-image: image-url("kame.JPG");
 	}
 	.image-box:nth-child(2) {
-		background-image: url(../assets/suimen-syugo.JPG);
+		background-image: image-url("suimen-syugo.JPG");
 		margin: 0 50px;
 	}
 	.image-box:nth-child(3) {
-		background-image: url(../assets/same.JPG);
+		background-image: image-url("same.JPG");
   }
 }
 

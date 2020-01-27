@@ -10,7 +10,10 @@
 		  	<i class="fas fa-heart" style="color: red;"></i> <%= f.likes.count %>
 		  	<i class="fas fa-comment" style="color: blue;"></i> <%= f.post_comments.count %>
 		  </span><br>
-		  <%=link_to f.user.name, user_path(f.user) %>
+		  <%=link_to user_path(f.user) do %>
+		    <%= image_tag attachment_url(f.user, :profile_image, :fill, 20, 20, fallback: "no_image.png"), size:'20x20' %>
+		    <%= f.user.nick_name %>
+		  <% end %>
 		 </div>
 	<% end %>
 </div>

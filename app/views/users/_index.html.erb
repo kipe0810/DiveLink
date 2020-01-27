@@ -1,22 +1,20 @@
-<div class="col-xs-10 col-xs-offset-1">
-	<% users.each do |f| %>
-	  <div style="float: left; margin: 0 15px 30px 15px; text-align: center;">
-	  	<%= link_to user_path(f.id) do %>
-	  	  <%= image_tag attachment_url(f, :profile_image, :fill, 200, 200, fallback: "no_image.png"), size: '200x200' %>
-	  	  <h3 class="user-name-index"><strong><%= f.nick_name %></strong></h3>
-	  	<% end %>
-	  	<% if f.age.present? or f.gender.present? %>
-	  	<%= f.age %> / <%= f.gender %><br>
-	  	<% end %>
-	  	<%=link_to "フォロー", follows_user_path(f.id) %><%= f.followings.count %>
-	  	 | <%=link_to "フォロワー", followers_user_path(f.id) %><%= f.followers.count %><br>
-	  	<% if f != current_user %>
-		  	<% if f.followed_by?(current_user) %>
-				  <%= link_to "フォロー済み", user_relationships_path(f.id), method: :delete, class: "btn btn-primary" %>
-				<% else %>
-				  <%= link_to "フォロー", user_relationships_path(f.id), method: :post, class: "btn btn-default" %>
-				<% end %>
+<div style="float: left; margin: 0 15px 30px 15px; text-align: center;">
+	<%= link_to user_path(users.id) do %>
+	  <%= image_tag attachment_url(users, :profile_image, :fill, 200, 200, fallback: "no_image.png"), size: '200x200' %>
+	  <h3 class="user-name-index"><strong><%= users.nick_name %></strong></h3>
+	<% end %>
+	<% if users.age.present? or users.gender.present? %>
+	<%= users.age %> / <%= users.gender %><br>
+	<% end %>
+	<%=link_to "フォロー", follows_user_path(users.id) %><%= users.followings.count %>
+	 | <%=link_to "フォロワー", followers_user_path(users.id) %><%= users.followers.count %><br>
+	<% if signed_in? %>
+  	<% if users != current_user %>
+	  	<% if users.followed_by?(current_user) %>
+			  <%= link_to "フォロー済み", user_relationships_path(users.id), method: :delete, class: "btn btn-primary" %>
+			<% else %>
+			  <%= link_to "フォロー", user_relationships_path(users.id), method: :post, class: "btn btn-default" %>
 			<% end %>
-	  </div>
+		<% end %>
 	<% end %>
 </div>
