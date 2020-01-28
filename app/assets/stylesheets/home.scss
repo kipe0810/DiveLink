@@ -13,7 +13,7 @@
 .can {
 	background-color: #EEEEEE;
 	width: 100%;
-	height: 600px;
+	height: 700px;
 	padding-top: 30px;
 	h1 {
 		margin: 0;
@@ -27,31 +27,34 @@
 		border-bottom: solid 2px black;
 		margin-bottom: 60px;
 	}
+	h4 {
+		text-align: center;
+		padding-top: 10px;
+	}
+	p {
+		font-size: 15px;
+	}
 }
 
-.image-box-area {
+.image-box {
+	width: 350px;
+	height: 300px;
 	display: block;
-	float: left;
-	background-color: olive;
-	.image-box {
-		float: left;
-		width: 300px;
-		height: 300px;
-		background-size: cover;
-		background-position: center;
-	}
-
-	.image-box:nth-child(1) {
-		background-image: image-url("kame.JPG");
-	}
-	.image-box:nth-child(2) {
-		background-image: image-url("suimen-syugo.JPG");
-		margin: 0 50px;
-	}
-	.image-box:nth-child(3) {
-		background-image: image-url("same.JPG");
-  }
+	margin: 0 auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
