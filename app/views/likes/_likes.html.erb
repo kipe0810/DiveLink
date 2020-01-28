@@ -4,7 +4,7 @@
       <%= link_to likes_path(post) do %>
         <span style="color: white;">いいね！ <%= post.likes.count %> </span>
       <% end %>
-      <%= link_to post_likes_path(post), method: :delete do %>
+      <%= link_to post_likes_path(post), method: :delete, remote: true do %>
         <i class="fas fa-heart" style="color: red;"></i>
       <% end %>
     </div>
@@ -13,7 +13,7 @@
       <%= link_to likes_path(post) do %>
         <span style="color: white;">いいね！ <%= post.likes.count %> </span>
       <% end %>
-      <%= link_to post_likes_path(post), method: :post do %>
+      <%= link_to post_likes_path(post), method: :post, remote: true do %>
         <i class="fas fa-heart" style="color: white;"></i>
       <% end %>
     </div>

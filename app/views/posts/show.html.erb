@@ -13,18 +13,22 @@
 	  <% end %>
 	</div>
 	<div class="like"><strong>
-		<%= render 'likes/likes', post: @post %>
+		<div id="likes_buttons_<%= @post.id %>">
+		  <%= render 'likes/likes', post: @post %>
+		</div>
 	</strong></div>
 </div>
 <div class="post-body">
 	<div class="row">
 		<div class="col-xs-7 col-xs-offset-1">
-			<div>
-				<p><%= @post.body %></p>
+			<div class="blog-body">
+				<p class="blog-body"><%= simple_format(@post.body) %></p>
 			</div>
 		</div>
 		<div class="col-xs-3">
-			<%= render 'post_comments/comment', post: @post, post_comment: @post_comment %>
+			<div id="comments_area">
+			  <%= render 'post_comments/comment', post: @post, post_comment: @post_comment %>
+			</div>
 	  </div>
 	</div>
 </div>
