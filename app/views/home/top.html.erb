@@ -2,34 +2,67 @@
 
 <div class="main-visual">
 	<img src="<%= asset_path "kingyo.JPG" %>">
+	<div>
+		<h1><strong class="diving-link">ダイビングと繋がる</strong></h1>
+	</div>
+	<div>
+		<h1><strong class="diver-link">ダイバーと繋がる</strong></h1>
+	</div>
 <!-- 	<img src="assets/iruka.JPG">
 	<img src="assets/aji.JPG">
 	<img src="assets/kame.JPG">
 	<img src="assets/hummer.jpeg">
- --></div>
+ -->
+</div>
 
 <main>
 	<div class="can">
-			<h1>DiveLinkにできること</h1>
-			<div class="border"></div>
-			<div class="container">
-				<div class="image-box-area col-md-4">
-					<img src="<%= asset_path "kame.JPG" %>" class="image-box">
-					<h4><strong>❶ダイビングの景色を共有</strong></h4>
-					<p>ブログ機能を使って、自分の見たこと感じたことを共有することができます。<br>
-					自分の見てきた素晴らしい世界を共有しましょう！</p>
+		<h1>DiveLinkにできること</h1>
+		<div class="border"></div>
+		<div class="container">
+			<div class="image-box-area col-md-4">
+				<img src="<%= asset_path "kame.JPG" %>" class="image-box">
+				<h4><strong>❶ダイビングの景色を共有</strong></h4>
+				<p>ブログ機能を使って、自分の見たこと感じたことを共有することができます。<br>
+				自分の見てきた素晴らしい世界を共有しましょう！</p>
 
-				</div>
-				<div class="image-box-area col-md-4">
-					<img src="<%= asset_path "suimen-syugo.JPG" %>" class="image-box">
-					<h4><strong>❷ダイバー同士で繋がる</strong></h4>
-					<p>チャットで他のダイバーと繋がってみましょう。<br>ダイビングショップやスポットをオススメし合ったり、行きたい所が同じなら一緒にダイビングへ！</p>
-				</div>
-				<div class="image-box-area col-md-4">
-					<img src="<%= asset_path "same.JPG" %>" class="image-box">
-					<h4><strong>❸まだ見たことのない世界へ</strong></h4>
-					<p>世界には、まだ自分の知らないダイビングスポットがたくさんあります。様々な投稿を見て、行きたいスポットを見つけましょう！</p>
-				</div>
+			</div>
+			<div class="image-box-area col-md-4">
+				<img src="<%= asset_path "suimen-syugo.JPG" %>" class="image-box">
+				<h4><strong>❷ダイバー同士で繋がる</strong></h4>
+				<p>チャットで他のダイバーと繋がってみましょう。<br>ダイビングショップやスポットをオススメし合ったり、行きたい所が同じなら一緒にダイビングへ！</p>
+			</div>
+			<div class="image-box-area col-md-4">
+				<img src="<%= asset_path "same.JPG" %>" class="image-box">
+				<h4><strong>❸まだ見たことのない世界へ</strong></h4>
+				<p>世界には、まだ自分の知らないダイビングスポットがたくさんあります。様々な投稿を見て、行きたいスポットを見つけましょう！</p>
 			</div>
 		</div>
+	</div>
+	<div class="signup-visual">
+		<div class="signup-visual-headline">
+		  <h1><strong>最高のダイビングをここから。</strong></h1>
+		  <img src="<%= asset_path "DiveLink_logo.png" %>" width="500px">
+		  <div class="signup-visual-btn">
+		  	<% if signed_in? %>
+		  	  <%= link_to 'マイページ', user_path(current_user), class: "btn btn-lg btn-primary" %>
+		  	<% else %>
+		  	  <%= link_to '新規ユーザー登録', new_user_registration_path, class: "btn btn-lg btn-danger" %>
+		  	<% end %>
+		  </div>
+		</div>
+		<div class="slide-visual">
+			<img src="<%= asset_path "tunodasi.jpg" %>">
+		</div>
+	</div>
+	<div class="attention-blog-area">
+		<div class="container">
+			<div class="row">
+				<h1>注目のブログ</h1>
+				<div class="border"></div>
+				<%= render 'posts/index', posts: @posts %>
+			</div>
+		</div>
+	</div>
 </main>
+<%= render 'layouts/footer' %>

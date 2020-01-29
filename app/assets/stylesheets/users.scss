@@ -18,8 +18,10 @@
 
 .user-name-index {
 	color: black;
-	margin-top: 10px;
 	text-decoration: none;
+	strong {
+		padding-top: 100px;
+	}
 }
 
 .profile-table {
@@ -29,4 +31,33 @@
 .user-post {
 	margin-top: 70px;
 }
+
+.profile-image {
+	border-radius: 50%;
+	float: left;
+}
+
+.user-name-post {
+	padding: 5px 0 0 40px;
+	font-size: 16px;
+	color: black;
+}
+
+.profile-image-index {
+	border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

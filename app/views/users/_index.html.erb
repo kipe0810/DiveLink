@@ -1,6 +1,6 @@
 <div style="float: left; margin: 0 15px 30px 15px; text-align: center; width: 200px; height: 320px;">
 	<%= link_to user_path(users.id) do %>
-	  <%= image_tag attachment_url(users, :profile_image, :fill, 200, 200, fallback: "no_image.png"), size: '200x200' %>
+	  <%= image_tag attachment_url(users, :profile_image, :fill, 200, 200, fallback: "no_image.png"), size: '200x200', class: "profile-image-index" %>
 	  <h3 class="user-name-index"><strong><%= users.nick_name %></strong></h3>
 	<% end %>
 	<i class="fas fa-book"></i> <%= users.posts.count %>

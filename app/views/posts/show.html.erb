@@ -1,6 +1,6 @@
 <%= render 'layouts/header' %>
 <div class="main-image">
-	<%= image_tag attachment_url(@post, :main_image, :fill, 1440, 670, fallback: "no_image.png"), size: '1440x670' %>
+	<%= image_tag attachment_url(@post, :main_image, :fill, 1440, 670, fallback: "no_image.png"), size: '1440x670', class: "post-main-image" %>
 	<h3 class="date"><strong><%= @post.created_at.strftime('%Y/%m/%d') %></strong></h3>
 	<h1 class="title"><strong><%= @post.title %></strong></h1>
 	<%= link_to user_path(@post.user.id) do %>
@@ -32,3 +32,4 @@
 	  </div>
 	</div>
 </div>
+<%= render 'layouts/footer' %>

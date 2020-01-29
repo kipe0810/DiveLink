@@ -2,8 +2,9 @@
 <div class="container">
 	<div class="profile row">
 			<div class="col-xs-3 col-xs-offset-2">
-				<div class="profile-image-show"></div>
-				<%= image_tag attachment_url(@user, :profile_image, :fill, 300, 300, fallback: "no_image.png"), size: '300x300' %>
+				<div class="profile-image-show">
+				  <%= image_tag attachment_url(@user, :profile_image, :fill, 300, 300, fallback: "no_image.png"), size: '300x300', class: "profile-image-index" %>
+				</div>
 			</div>
 			<div class="profile-table col-xs-5">
 				<h2 class="profile-headline">Profile</h2>
@@ -71,3 +72,4 @@
   </div>
 
 </div>
+<%= render 'layouts/footer' %>
