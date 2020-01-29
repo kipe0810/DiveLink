@@ -4,7 +4,7 @@
 	<h3 class="date"><strong><%= @post.created_at.strftime('%Y/%m/%d') %></strong></h3>
 	<h1 class="title"><strong><%= @post.title %></strong></h1>
 	<%= link_to user_path(@post.user.id) do %>
-	  <h4 class="post-user"><%= image_tag attachment_url(@post.user, :profile_image, :fill, 30, 30, fallback: "no_image.png"), size: '30x30' %> <%= @post.user.nick_name %></h4>
+	  <h4 class="post-user"><%= image_tag attachment_url(@post.user, :profile_image, :fill, 30, 30, fallback: "no_image.png"), size: '30x30', class: "post-show-profile-image" %> <%= @post.user.nick_name %></h4>
 	<% end %>
 	<div class="edit">
 		<% if @post.user == current_user %>

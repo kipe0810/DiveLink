@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rooms/show'
   devise_for :users, :controller => {
   	:registrations =>'user/registrations',
   	:sessions => 'users/sessions'
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
+
+  resources :points, only: [:index, :show]
 
   root :to => 'home#top'
   get '/about' => 'home#about'
