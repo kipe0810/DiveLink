@@ -1,8 +1,8 @@
 class SearchController < ApplicationController
 
 	def search
-		@posts = Post.all
-		@users = User.all
+		@posts = Post.page(params[:page]).per(20)
+		@users = User.page(params[:page]).per(20)
 		@model = params[:model]
 		@search = params[:search]
 		@searching = searching(@model, @search)

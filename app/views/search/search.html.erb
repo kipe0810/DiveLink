@@ -11,24 +11,27 @@
 				    <% @users.each do |f| %>
 			        <%= render 'users/index', users: f %>
 			      <% end %>
+			    </div>
+			    <%= paginate @users %>
 				<% else %>
 				  <div class="col-xs-10 col-xs-offset-1">
 				    <h4 class="search-result">"<%= @search %>"の検索結果（User）</h4>
 				    <% @searching.each do |f| %>
 				      <%= render 'users/index', users: f %>
 				    <% end %>
+				  </div>
 				<% end %>
 			<% elsif @model == "Post" %>
 				<% if @search.blank? %>
 				    <h4 class="search-result">Blogを全件表示しています</h4>
 				    <%= render 'posts/index', posts: @posts %>
+				    <%= paginate @posts %>
 				<% else %>
 				    <h4 class="search-result">"<%= @search %>"の検索結果（Blog）</h4>
 					<%= render 'posts/index', posts: @searching %>
 				<% end %>
 			<% end %>
 
-	</div>
 	</div>
 </div>
 <%= render 'layouts/footer' %>

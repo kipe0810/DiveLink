@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   	:registrations =>'user/registrations',
   	:sessions => 'users/sessions'
   }
+  get 'rooms/show'
 
   resources :users do
     resource :relationships, only: [:create, :destroy]

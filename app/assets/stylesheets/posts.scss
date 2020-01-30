@@ -16,7 +16,7 @@
 	text-decoration: none;
 }
 
-.main-image {
+.main-image-area {
 	position: relative;
 
 	.date {
@@ -69,12 +69,19 @@
 }
 
 
+.main-image {
+	position:relative;
+}
 
-
-
-
-
-
+.main-image:after{
+  position: absolute;
+  content:"";
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 60%, rgba(0,0,0,0.7) 100%);
+}
 
 
 
