@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+
+	default_scope -> { order(created_at: :desc) }
+
 	belongs_to :user
 	belongs_to :point, optional: true
 	has_many :post_images
