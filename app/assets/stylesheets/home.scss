@@ -7,9 +7,10 @@
 	width: 100%;
 	height: 680px;
 	img {
+		display: none;
+		position: absolute;
 		width: 100%;
 		height: 680px;
-		position: relative;
 	}
 	h1 {
 		font-size: 50px;
@@ -105,11 +106,11 @@
   }
 }
 
-.slide-visual {
-	img {
+.slideshow {
+	.slide-visual {
 		width: 450px;
 		height: 350px;
-		display: block;
+		display: none;
 		position: absolute;
 		top: 150px;
 		right: 170px;

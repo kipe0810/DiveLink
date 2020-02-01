@@ -1,18 +1,20 @@
 <%= render 'layouts/header' %>
 
 <div class="main-visual">
-	<img src="<%= asset_path "kingyo.JPG" %>">
+	<div class="slideshow">
+		<img src="<%= asset_path "kingyo.JPG" %>">
+		<img src="<%= asset_path "iruka.JPG" %>">
+		<img src="<%= asset_path "hummer.jpeg" %>">
+		<img src="<%= asset_path "kame.JPG" %>">
+		<img src="<%= asset_path "yosuji.JPG" %>">
+	</div>
 	<div>
 		<h1><strong class="diving-link">ダイバーと繋がる</strong></h1>
 	</div>
 	<div>
 		<h1><strong class="diver-link">ダイビングと繋がる</strong></h1>
 	</div>
-<!-- 	<img src="assets/iruka.JPG">
-	<img src="assets/aji.JPG">
-	<img src="assets/kame.JPG">
-	<img src="assets/hummer.jpeg">
- -->
+
 </div>
 
 <main>
@@ -30,7 +32,7 @@
 			<div class="image-box-area col-md-4">
 				<img src="<%= asset_path "suimen-syugo.JPG" %>" class="image-box">
 				<h4><strong>❷ダイバー同士で繋がる</strong></h4>
-				<p>チャットで他のダイバーと繋がってみましょう。<br>ダイビングショップやスポットをオススメし合ったり、行きたい所が同じなら一緒にダイビングへ！</p>
+				<p>たくさんコメントをして、他のダイバーと繋がってみましょう。<br>ダイビングショップやスポットをオススメし合ったり、行きたい所が同じなら一緒にダイビングへ！</p>
 			</div>
 			<div class="image-box-area col-md-4">
 				<img src="<%= asset_path "same.JPG" %>" class="image-box">
@@ -51,8 +53,12 @@
 		  	<% end %>
 		  </div>
 		</div>
-		<div class="slide-visual">
-			<img src="<%= asset_path "tunodasi.jpg" %>">
+		<div class="slideshow">
+			<img src="<%= asset_path "tunodasi.jpg" %>" class="slide-visual">
+			<img src="<%= asset_path "tubame.JPG" %>" class="slide-visual">
+			<img src="<%= asset_path "umeiro.JPG" %>" class="slide-visual">
+			<img src="<%= asset_path "hata.JPG" %>" class="slide-visual">
+			<img src="<%= asset_path "blue.JPG" %>" class="slide-visual">
 		</div>
 	</div>
 	<div class="attention-blog-area">
