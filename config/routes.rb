@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'genres/index'
+  get 'genres/show'
   get 'rooms/show'
   devise_for :users, :controller => {
   	:registrations =>'user/registrations',
@@ -16,6 +18,8 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
+
+  resources :genres, only: [:index]
 
   resources :points, only: [:index, :show]
 

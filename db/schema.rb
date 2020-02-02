@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_29_080520) do
+ActiveRecord::Schema.define(version: 2020_02_02_073407) do
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "likes", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -31,6 +37,8 @@ ActiveRecord::Schema.define(version: 2020_01_29_080520) do
     t.string "point_name"
     t.text "point_body"
     t.string "point_image_id"
+    t.integer "genre_id"
+    t.string "point_address"
   end
 
   create_table "post_comments", force: :cascade do |t|

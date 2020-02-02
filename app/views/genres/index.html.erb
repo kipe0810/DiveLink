@@ -1,0 +1,26 @@
+<%= render 'layouts/header' %>
+<div class="container">
+	<div class="pointmap-area">
+		<h1 class="pointmap-headline"><strong>ダイビングスポットを探す</strong></h1>
+		<div class="border"></div>
+		<img src="<%= asset_path "japanmap.png" %>">
+		<%= link_to '北海道', points_path, class: "btn btn-primary", style: "position: absolute; top: 300px; right: 560px;" %>
+    <%= link_to '東北(日本海側)',points_path, class: "btn btn-primary", style: "position: absolute; top: 535px; right: 605px;" %>
+		<%= link_to '東北(太平洋側)',points_path, class: "btn btn-primary", style: "position: absolute; top: 500px; right: 280px;" %>
+		<%= link_to '北陸',points_path, class: "btn btn-primary", style: "position: absolute; top: 590px; left: 570px;" %>
+		<%= link_to '房総半島',points_path, class: "btn btn-primary", style: "position: absolute; top: 675px; right: 300px;" %>
+		<%= link_to '湘南・三浦半島',points_path, class: "btn btn-primary", style: "position: absolute; top: 638px; right: 258px;" %>
+		<%= link_to '伊豆半島',points_path, class: "btn btn-primary", style: "position: absolute; top: 735px; right: 370px;" %>
+		<%= link_to '本栖湖',points_path, class: "btn btn-primary", style: "position: absolute; top: 772px; right: 384px;" %>
+		<%= link_to '伊豆七島・小笠原',points_path, class: "btn btn-primary", style: "position: absolute; top: 809px; right: 314px;" %>
+		<%= link_to '紀伊半島',points_path, class: "btn btn-primary", style: "position: absolute; top: 772px; right: 505px;" %>
+		<%= link_to '山陰',points_path, class: "btn btn-primary", style: "position: absolute; bottom: 105px; left: 390px;" %>
+		<%= link_to '四国',points_path, class: "btn btn-primary", style: "position: absolute; bottom: -60px; right: 655px;" %>
+		<%= link_to '九州',points_path, class: "btn btn-primary", style: "position: absolute; bottom: -10px; left: 320px;" %>
+		<%= link_to '薩南諸島',points_path, class: "btn btn-primary", style: "position: absolute; top: 343px; left: 480px;" %>
+		<%= link_to '沖縄本島',points_path, class: "btn btn-primary", style: "position: absolute; top: 380px; left: 480px;" %>
+		<%= link_to '沖縄(離島)',points_path, class: "btn btn-primary", style: "position: absolute; top: 417px; left: 480px;" %>
+	</div>
+</div>
+
+<%= render 'layouts/footer' %>
