@@ -1,2 +1,18 @@
-<h1>Genres#show</h1>
-<p>Find me in app/views/genres/show.html.erb</p>
+<%= render 'layouts/header' %>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-3">
+			<%= render 'points/sidebar', genres: @genres %>
+		</div>
+		<div class="col-xs-9">
+			<h3 style="margin-top: 30px; margin-bottom: 50px;">
+				<%= @genre.name %>エリア
+				<span>（全<%= @genre.points.count %>件）</span>
+			</h3>
+			<% @genre.points.each do |gp| %>
+			  <%= render 'points/index', gp: gp %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<%= render 'layouts/footer' %>

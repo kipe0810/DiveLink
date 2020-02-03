@@ -1,11 +1,18 @@
 <%= render 'layouts/header' %>
 <div class="container">
-	<h1 class="point-index-headline"><strong>スポット一覧</strong></h1>
-	<div class="border"></div>
-	<%= render 'points/index' %>
+	<div class="row">
+		<div class="col-xs-3">
+			<%= render 'points/sidebar', genres: @genres %>
+		</div>
+		<div class="col-xs-9">
+			<h3 style='margin-top: 30px; margin-bottom: 50px;'>すべてのエリア表示中（全<%= @point.count %>件）
+			</h3>
+			<% @points.each do |gp| %>
+			  <%= render 'points/index', gp: gp %>
+			<% end %>
+			<%= paginate @points %>
+		</div>
+	</div>
 </div>
-
-
-
 
 <%= render 'layouts/footer' %>

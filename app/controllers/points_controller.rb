@@ -1,7 +1,9 @@
 class PointsController < ApplicationController
 
 	def index
-		@points = Point.all
+		@point = Point.all
+		@points = Point.page(params[:page]).per(10)
+		@genres = Genre.all
 	end
 
 	def show

@@ -3,6 +3,7 @@
 <div class="container">
 	<div class="row">
 		<h1 class="search-headline">検索結果</h1>
+		<div class="border" style="margin-bottom: 0;"></div>
 
 			<% if @model == "User" %>
 				<% if @search.blank? %>
@@ -23,13 +24,38 @@
 				<% end %>
 			<% elsif @model == "Post" %>
 				<% if @search.blank? %>
-				    <h4 class="search-result">Blogを全件表示しています</h4>
-				    <%= render 'posts/index', posts: @posts %>
-				    <%= paginate @posts %>
+			    <h4 class="search-result">Blogを全件表示しています</h4>
+			    <%= render 'posts/index', posts: @posts %>
+			    <%= paginate @posts %>
 				<% else %>
-				    <h4 class="search-result">"<%= @search %>"の検索結果（Blog）</h4>
+				  <h4 class="search-result">"<%= @search %>"の検索結果（Blog）</h4>
 					<%= render 'posts/index', posts: @searching %>
 				<% end %>
+			<% elsif @model == "Point" %>
+			  <% if @search.blank? %>
+			    <div class="col-xs-3">
+			    	<%= render 'points/sidebar', genres: @genres %>
+			    </div>
+			    <div class="col-xs-9">
+			    	<h3 style="margin-top: 30px; margin-bottom: 50px;">
+			    	Pointを全件表示しています
+			      </h3>
+			    	<% @points.each do |gp| %>
+			    	  <%= render 'points/index', gp: gp %>
+			    	<% end %>
+			    	<%= paginate @points %>
+			    </div>
+			  <% else %>
+			    <div class="col-xs-3">
+			    	<%= render 'points/sidebar', genres: @genres %>
+			    </div>
+			    <div class="col-xs-9">
+			    	<h3 style="margin-top: 30px; margin-bottom: 50px;">"<%= @search %>"の検索結果</h3>
+			    	<% @searching.each do |gp| %>
+			    	  <%= render 'points/index', gp: gp %>
+			    	<% end %>
+			    </div>
+			  <% end %>
 			<% end %>
 
 	</div>
