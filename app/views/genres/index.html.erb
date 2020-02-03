@@ -1,6 +1,25 @@
 <%= render 'layouts/header' %>
 <div class="container">
-	<%= render 'genres/map' %>
+	<div class="row">
+		<h1 class="pointmap-headline"><strong>ダイビングスポットを探す</strong></h1>
+		<div class="border"></div>
+		<div class="col-xs-3">
+			<div>
+				<%= render 'points/sidebar', genres: @genres %>
+			</div>
+		</div>
+		<div class="col-xs-9">
+			<%= render 'genres/map' %>
+		</div>
+	</div>
 </div>
 
 <%= render 'layouts/footer' %>
+
+
+
+
+
+
+
+

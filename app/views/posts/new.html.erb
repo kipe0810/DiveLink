@@ -21,6 +21,10 @@
 								<th>本文</th>
 								<td><%= f.text_area :body, class: "form-control", style:"width: 100%; height: 400px;" %></td>
 							</tr>
+							<tr>
+								<th>ブログ画像</th>
+								<td><%= f.attachment_field :post_images_images, multiple: true %></td>
+							</tr>
 						</table>
 						<%= f.submit class: "btn btn-primary" %>
 					<% end %>

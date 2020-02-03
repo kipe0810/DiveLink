@@ -20,19 +20,18 @@
     <% end %>
   </div>
   <div class="nav-list">
-    <span><strong><%= link_to 'Top', root_path %></strong></span>
-    <span><strong><%= link_to 'About', about_path %></strong></span>
-    <span><strong><%= link_to 'Blogs', posts_path %></strong></span>
-    <span><strong><%= link_to 'Users', users_path %></strong></span>
-    <span><strong><%= link_to 'DivingPoint', genres_path %></strong></span>
+    <span><strong><%= link_to 'Top', root_path, style: "color: #0033CC;" %></strong></span>
+    <span><strong><%= link_to 'Blogs', posts_path, style: "color: #0033CC;" %></strong></span>
+    <span><strong><%= link_to 'Users', users_path, style: "color: #0033CC;" %></strong></span>
+    <span><strong><%= link_to 'DivingPoint', genres_path, style: "color: #0033CC;" %></strong></span>
     <% if user_signed_in? %>
-      <span><strong><%= link_to 'My Page', user_path(current_user) %></strong></span>
-      <span><strong><%= link_to 'New Blog', new_post_path %></strong></span>
+      <span><strong><%= link_to 'My Page', user_path(current_user), style: "color: #0033CC;" %></strong></span>
+      <span><strong><%= link_to 'New Blog', new_post_path, style: "color: #0033CC;" %></strong></span>
     <% end %>
   </div>
   <%= render 'search/search' %>
 </header>
-<div class="header-border"></div>
+<div style="border-bottom: solid 1px gray;"></div>
 
 
 

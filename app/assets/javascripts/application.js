@@ -20,7 +20,6 @@
 
 
 $(function(){
-
 	$('.slideshow').each(function(){
 
 		var $slides = $(this).find('img'),
@@ -39,3 +38,43 @@ $(function(){
 		}
 	});
 });
+
+
+
+
+
+$(function (){
+	$('.sidebar').each(function (){
+
+		var $window = $(window),
+		    $sidebar = $(this),
+		    sidebarOffsetTop = $sidebar.offset().top;
+
+		$window.on('scroll', function(){
+			if ($window.scrollTop() > sidebarOffsetTop) {
+				$sidebar.addClass('sticky');
+			} else {
+				$sidebar.removeClass('sticky');
+			}
+		});
+		$window.trigger('scroll');
+	});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

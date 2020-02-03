@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 
   def new
   	@post = Post.new
+    @post.post_images.build
   end
 
   def create
@@ -29,6 +30,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @post.post_images.build
   end
 
   def update
@@ -48,7 +50,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-  	params.require(:post).permit(:title, :body, :main_image)
+  	params.require(:post).permit(:title, :body, :main_image, post_images_images: [])
   end
 
   def current_user!
