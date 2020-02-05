@@ -1,0 +1,16 @@
+<%= render 'layouts/header' %>
+<div class="main-image-area">
+	<div class="main-image">
+		<%= image_tag attachment_url(@point, :point_image, :fill, 1440, 670, fallback: "no_image.png"), size: '1440x670', class: "post-main-image" %>
+	</div>
+	<h1 class="title" style="font-size: 60px;"><strong><%= @point.point_name %></strong></h1>
+</div>
+<div style="margin: 50px 0;">
+	<div class="container">
+		<div class="col-xs-10 col-xs-offset-1">
+			<p style="font-size: 20px;"><%= @point.point_body %></p>
+		</div>
+	</div>
+</div>
+
+<%= render 'layouts/footer' %>

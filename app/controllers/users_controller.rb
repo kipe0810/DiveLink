@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @points = Point.all
   end
 
   def update

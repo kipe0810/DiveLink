@@ -12,7 +12,7 @@
 				 | <%= link_to "フォロワー", followers_user_path(@user.id) %> <%= @user.followers.count %>
 				<% if signed_in? %>
 					<% if @user == current_user %>
-						  <%= link_to '編集', edit_user_path(@user), class: "btn btn-primary" %>
+						  <%= link_to '編集', edit_user_path(@user), class: "btnblue-default" %>
 					<% else %>
 					  <% if @user.followed_by?(current_user) %>
 						  <%= link_to "フォロー済み", user_relationships_path(@user.id), method: :delete, class: "btn btn-primary" %>

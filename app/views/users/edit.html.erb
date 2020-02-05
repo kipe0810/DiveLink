@@ -43,6 +43,10 @@
 				  		<td><%= f.text_field :license, class: "form-control", style: "width: 70%;" %></td>
 				  	</tr>
 				  	<tr>
+				  		<th>よく行くポイント</th>
+				  		<td><%= f.select :point_id, [], :prompt => "選択する" %></td>
+				  	</tr>
+				  	<tr>
 				  		<th>Eメールアドレス</th>
 				  		<td><%= f.text_field :email, class: "form-control", style: "width: 70%;" %></td>
 				  	</tr>
@@ -71,7 +75,7 @@
 				  		<td><%= f.text_area :introduction, class: "form-control", style:"width: 70%;" %></td>
 				  	</tr>
 				  </table>
-				  <%= f.submit '保存', class: "btn btn-default" %><br><br>
+				  <%= f.submit '保存', class: "btnwhite" %><br><br>
 				  <%= link_to 'マイページへ戻る', user_path(current_user) %>
 
 

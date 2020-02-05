@@ -7,6 +7,7 @@
 		<img src="<%= asset_path "hummer.jpeg" %>">
 		<img src="<%= asset_path "kame.JPG" %>">
 		<img src="<%= asset_path "yosuji.JPG" %>">
+		<img src="<%= asset_path "sirosuna.jpg" %>">
 	</div>
 	<div>
 		<h1><strong class="diving-link">ダイバーと繋がる</strong></h1>
@@ -46,9 +47,9 @@
 		  <img src="<%= asset_path "DiveLink_logo.png" %>" width="500px">
 		  <div class="signup-visual-btn">
 		  	<% if signed_in? %>
-		  	  <%= link_to 'マイページ', user_path(current_user), class: "btn btn-lg btn-primary" %>
+		  	  <%= link_to 'マイページ', user_path(current_user), class: "btnblue" %>
 		  	<% else %>
-		  	  <%= link_to '新規ユーザー登録', new_user_registration_path, class: "btn btn-lg btn-danger" %>
+		  	  <%= link_to '新規ユーザー登録', new_user_registration_path, class: "btnred" %>
 		  	<% end %>
 		  </div>
 		</div>

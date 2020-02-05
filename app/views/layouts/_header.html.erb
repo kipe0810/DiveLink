@@ -5,28 +5,28 @@
     </a>
     <% if user_signed_in? %>
       <span class="login">
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, deta: {confirm: "ログアウトします。よろしいですか？"}, class: "btn btn-danger" %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, deta: {confirm: "ログアウトします。よろしいですか？"}, class: "btn btnred-header" %>
       </span>
       <span class="login login-name">
         <%= link_to current_user.nick_name, user_path(current_user) %>さんがログイン中
       </span>
     <% else %>
       <span class="login">
-        <%= link_to '新規登録',new_user_registration_path, class: "btn btn-danger" %>
+        <%= link_to '新規登録',new_user_registration_path, class: "btnred-header" %>
       </span>
       <span class="login">
-        <%= link_to 'ログイン', new_user_session_path, class: "btn btn-default" %>
+        <%= link_to 'ログイン', new_user_session_path, class: "btnwhite" %>
       </span>
     <% end %>
   </div>
   <div class="nav-list">
-    <span><strong><%= link_to 'Top', root_path, style: "color: #0033CC;" %></strong></span>
-    <span><strong><%= link_to 'Blogs', posts_path, style: "color: #0033CC;" %></strong></span>
-    <span><strong><%= link_to 'Users', users_path, style: "color: #0033CC;" %></strong></span>
-    <span><strong><%= link_to 'DivingPoint', genres_path, style: "color: #0033CC;" %></strong></span>
+    <span><strong><%= link_to 'Top', root_path, style: "color: #0033CC; text-decoration: none;" %></strong></span>
+    <span><strong><%= link_to 'Blogs', posts_path, style: "color: #0033CC; text-decoration: none;" %></strong></span>
+    <span><strong><%= link_to 'Users', users_path, style: "color: #0033CC; text-decoration: none;" %></strong></span>
+    <span><strong><%= link_to 'DivingPoint', genres_path, style: "color: #0033CC; text-decoration: none;" %></strong></span>
     <% if user_signed_in? %>
-      <span><strong><%= link_to 'My Page', user_path(current_user), style: "color: #0033CC;" %></strong></span>
-      <span><strong><%= link_to 'New Blog', new_post_path, style: "color: #0033CC;" %></strong></span>
+      <span><strong><%= link_to 'My Page', user_path(current_user), style: "color: #0033CC; text-decoration: none;" %></strong></span>
+      <span><strong><%= link_to 'New Blog', new_post_path, style: "color: #0033CC; text-decoration: none;" %></strong></span>
     <% end %>
   </div>
   <%= render 'search/search' %>
