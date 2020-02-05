@@ -1,7 +1,9 @@
-<p style="border-left: 10px solid blue; font-size: 20px; padding-left: 5px;">エリアから探す</p>
-<p style="border-bottom: 1px dotted blue;"><%= link_to "すべてのエリア", points_path, style: "margin-left: 10px; color: black;" %></p>
+<p style="border-left: 10px solid blue; font-size: 20px; padding-left: 5px;"><strong>エリアから探す</strong></p>
+<p style="border-bottom: 1px dotted blue;">
+	<strong><%= link_to "すべてのエリア", points_path, class: "genre-name", style: "text-decoration: none;" %></strong>
+</p>
 <% genres.each do |g| %>
   <p style="border-bottom: 1px dotted blue;">
-  	<%= link_to g.name, genre_path(g), style: "margin-left: 10px; color: black;" %>
+  	<strong><%= link_to g.name, genre_path(g), class: "genre-name", style: "text-decoration: none;" %></strong>
   </p>
 <% end %>

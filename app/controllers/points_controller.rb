@@ -8,6 +8,8 @@ class PointsController < ApplicationController
 
 	def show
 		@point = Point.find(params[:id])
+		@backpoint = @point.id - 1
+		@nextpoint = @point.id + 1
 	end
 
 end

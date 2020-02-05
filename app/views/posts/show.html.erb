@@ -28,7 +28,7 @@
 				<% if @post.post_images.present? %>
 				  <div style="margin: 70px 0;">
 				  	<% @post.post_images.each do |pi| %>
-				  	  <%= image_tag attachment_url(pi, :image, :fill, 370, 300), style: "margin-left: 15px; margin-bottom: 20px;" %>
+				  	  <%= image_tag attachment_url(pi, :image, :fill, 370, 300), style: "margin-left: 15px; margin-bottom: 20px; border-radius: 20px;" %>
 				    <% end %>
 				  </div>
 				<% end %>
