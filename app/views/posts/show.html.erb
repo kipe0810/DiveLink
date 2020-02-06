@@ -35,9 +35,16 @@
 			</div>
 		</div>
 		<div class="col-xs-4">
-			<div id="comments_area">
-			  <%= render 'post_comments/comment', post: @post, post_comment: @post_comment %>
-			</div>
+			<% if signed_in? %>
+				<div id="comments_area">
+				  <%= render 'post_comments/comment', post: @post, post_comment: @post_comment %>
+				</div>
+			<% else %>
+			  <div style="height: 500px; background-color: #FFCCCC;">
+			  	<h3 style="line-height: 500px; text-align: center;">コメントを見るにはログインが必要です</h3>
+			  	<%= link_to 'ログイン', new_user_session_path, class: "btnwhite-comment" %>
+			  </div>
+			<% end %>
 	  </div>
 	</div>
 </div>

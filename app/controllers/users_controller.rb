@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!,  only: [:edit, :update]
-  before_action :current_user!, only: [:edit, :update]
+  before_action :authenticate_user!,  only: [:edit, :update, :destroy]
+  before_action :current_user!, only: [:edit, :update, :destroy]
 
 	def index
     @users = User.page(params[:page]).per(20)
@@ -26,6 +26,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_path
   end
 
   def follows
