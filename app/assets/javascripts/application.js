@@ -108,12 +108,12 @@ $(function(){
 		    		clearInterval(progressTimer);
 		    		$container.addClass('progress-complete');
 		    		$progressBar.add($progressText)
-		    		    .delay(500)
-		    		    .animate({ opacity: 0 }, 250, function(){
-		    		    	$container.animate({
-		    		    		top: '-100%'
-		    		    	}, 1000, 'easeInOutQuint');
-		    		    });
+	    		    .delay(500)
+	    		    .animate({ opacity: 0 }, 250, function(){
+	    		    	$container.animate({
+	    		    		top: '-100%'
+	    		    	}, 1000, 'easeInOutQuint');
+	    		    });
 		    	}
 
 		    	if (current > 99.9){

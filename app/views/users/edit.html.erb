@@ -44,7 +44,7 @@
 				  	</tr>
 				  	<tr>
 				  		<th>よく行くポイント</th>
-				  		<td><%= f.select :point_id, [], :prompt => "選択する" %></td>
+				  		<td><%= f.select :point_id, Point.all.map { |point| [point.point_name, point.id] }, :prompt => "選択する" %></td>
 				  	</tr>
 				  	<tr>
 				  		<th>Eメールアドレス</th>

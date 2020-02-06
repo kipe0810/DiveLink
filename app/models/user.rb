@@ -14,6 +14,7 @@ class User < ApplicationRecord
   attachment :profile_image
 
   belongs_to :point, optional: true
+
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :post_comments, dependent: :destroy
