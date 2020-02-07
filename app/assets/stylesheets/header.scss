@@ -43,7 +43,26 @@ header {
 	right: 30px;
 }
 
-
+@media screen and (max-width:425px) {
+	header {
+		height: 70px;
+		width: 100%;
+		.search {
+			display: none;
+		}
+		.login {
+			display: none;
+		}
+		.nav-list {
+			display: none;
+		}
+		img {
+			width: 180px;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
 
 
 

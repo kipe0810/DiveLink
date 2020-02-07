@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  default_scope -> { order(created_at: :desc) }
+
   validates :name, presence: true, length: {maximum: 20, minimum: 2}
   validates :nick_name, presence: true, length: {maximum: 20, minimum: 2}
   validates :postal_code, presence: true
