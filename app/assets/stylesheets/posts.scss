@@ -26,6 +26,13 @@
 		top: 500px;
 		left: 150px;
 	}
+	.post-point {
+		position: absolute;
+		color: white;
+		top: 502px;
+		left: 330px;
+		font-size: 20px;
+	}
 	.title {
 		position: absolute;
 		color: white;
@@ -85,8 +92,19 @@
   background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 60%, rgba(0,0,0,0.7) 100%);
 }
 
-
-
+.post-pointname {
+	position: relative;
+	bottom: 120px;
+	left: 15px;
+}
+.post-icon-area {
+	float: right;
+	position: relative;
+	padding: 4px 10px;
+	border-radius: 20px;
+	bottom: 68px;
+	right: 10px;
+}
 
 
 

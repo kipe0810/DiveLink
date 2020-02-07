@@ -14,6 +14,10 @@
 								<td><%= f.attachment_field :main_image, placeholder: "image" %></td>
 							</tr>
 							<tr>
+								<th>ポイント</th>
+								<td><%= f.select :point_id, Point.all.map {|point| [point.point_name, point.id] }, :prompt => "選択する" %></td>
+							</tr>
+							<tr>
 								<th>題名</th>
 								<td><%= f.text_field :title, class: "form-control", style:"width: 70%;" %></td>
 							</tr>

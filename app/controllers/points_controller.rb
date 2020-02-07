@@ -10,6 +10,7 @@ class PointsController < ApplicationController
 		@point = Point.find(params[:id])
 		@backpoint = @point.id - 1
 		@nextpoint = @point.id + 1
+		@posts = Post.where(point_id: @point.id)
 	end
 
 end

@@ -4,6 +4,7 @@
 		<%= image_tag attachment_url(@post, :main_image, :fill, 1440, 670, fallback: "no_image.png"), size: '1440x670', class: "post-main-image" %>
 	</div>
 	<h3 class="date"><strong><%= @post.created_at.strftime('%Y/%m/%d') %></strong></h3>
+	<h3 class="post-point"><strong>・<%= link_to @post.point.point_name, point_path(id: @post.point_id), style: "color: white;" %></strong></h3>
 	<h1 class="title"><strong><%= @post.title %></strong></h1>
 	<%= link_to user_path(@post.user.id) do %>
 	  <h4 class="post-user"><%= image_tag attachment_url(@post.user, :profile_image, :fill, 30, 30, fallback: "no_image.png"), size: '30x30', class: "post-show-profile-image" %> <%= @post.user.nick_name %></h4>
@@ -46,6 +47,13 @@
 			  </div>
 			<% end %>
 	  </div>
+	</div>
+</div>
+<div class="container" style="margin-top: 50px;">
+	<div class="row">
+		<h2 style="text-align: center;"><strong>類似するブログ</strong></h2>
+		<div class="border"></div>
+		<%= render 'posts/index', posts: @posts %>
 	</div>
 </div>
 <%= render 'layouts/footer' %>

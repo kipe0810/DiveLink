@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
+    @posts = Post.where(point_id: @post.point_id)
   end
 
   def new

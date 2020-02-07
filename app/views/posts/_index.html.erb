@@ -6,9 +6,9 @@
 		    <h3 class="post-title-index"><strong><%= f.title.truncate(10, omission: '…') %></strong></h3>
 		  <% end %>
 		  <%= f.created_at.strftime('%Y/%m/%d %H:%M') %>
-		  <span style="float: right;">
-		  	<i class="fas fa-heart" style="color: red;"></i> <%= f.likes.count %>
-		  	<i class="fas fa-comment" style="color: blue;"></i> <%= f.post_comments.count %>
+		  <span class="post-icon-area" style="background-color: rgb(0, 0, 0, 0.5); color: white;">
+		  	<i class="fas fa-heart" style="color: white;"></i> <%= f.likes.count %>
+		  	<i class="fas fa-comment" style="color: white; padding-left: 8px;"></i> <%= f.post_comments.count %>
 		  </span><br>
 		  <%=link_to user_path(f.user) do %>
 		    <div>
@@ -16,6 +16,7 @@
 			    <p class="user-name-post"><%= f.user.nick_name %></p>
 		    </div>
 		  <% end %>
+		  <p class="post-pointname"><%= link_to f.point.point_name, point_path(f.point.id), style: "padding: 5px 10px; color: white; background-color: rgb(0, 0, 0, 0.5); border-radius: 20px;" %></p>
 		 </div>
 	<% end %>
 </div>

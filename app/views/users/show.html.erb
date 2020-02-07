@@ -50,10 +50,12 @@
 						<th>性別</th>
 						<td><%= @user.gender %></td>
 					</tr>
-					<tr>
-						<th>場所</th>
-						<td><%= @user.point.point_name %></td>
-					</tr>
+					<% if @user.point.present? %>
+						<tr>
+							<th>お気に入りのポイント</th>
+							<td><%= link_to @user.point.point_name, point_path(id: @user.point_id),style: "color: black; text-decoration: none;" %></td>
+						</tr>
+					<% end %>
 					<tr>
 						<th>ライセンス</th>
 						<td><%= @user.license %></td>
