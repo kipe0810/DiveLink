@@ -29,5 +29,6 @@ Rails.application.routes.draw do
   get '/result' => 'search#search', as: 'result'
 
   get '/likes/:post_id' => 'likes#index', as: 'likes'
+  get '/points/:point_id/posts' => 'points#point_posts', as: 'point_posts'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

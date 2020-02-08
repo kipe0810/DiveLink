@@ -12,7 +12,9 @@
 			<% @points.each do |gp| %>
 			  <%= render 'points/index', gp: gp %>
 			<% end %>
-			<%= paginate @points %>
+			<div style="text-align: center;">
+				<%= paginate @points %>
+			</div>
 		</div>
 	</div>
 </div>

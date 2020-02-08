@@ -21,7 +21,12 @@
 			<h2 style="text-align: center;"><strong><%= @point.point_name %>のブログ</strong></h2>
 			<div class="border"></div>
 			<% if @posts.present? %>
-			  <%= render 'posts/index', posts: @posts %>
+			  <%= render 'posts/index', posts: @posts_randum %>
+			  <% if @posts.count > 4 %>
+			    <div>
+			    	<p style="font-size: 20px; text-align: right;"><%= link_to 'もっと見る＞', point_posts_path(@point.id) %></p>
+			    </div>
+			  <% end %>
 			<% else %>
 				<span>
 					<h4 style="text-align: center; font-size: 20px; margin-bottom: 50px;"><strong><%= @point.point_name %>のブログはまだありません。</strong></h4>
