@@ -4,6 +4,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true, length: {maximum: 25, minimum:2}
   validates :body, presence: true
+  validates :point_id, presence: true
 
 
 

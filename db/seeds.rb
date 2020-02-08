@@ -114,6 +114,8 @@
 
 
 
+
+
 # User.create(id: '1', name: '中出　稀平', nick_name: 'きぺ', profile_image: open("#{Rails.root}/db/user-image/my.jpeg"), postal_code: '5940071', prefecture: '大阪府', city: '和泉市府中町', street: '1-1-1', email: 'kipe@kipe', password: '123456', age: '20代', gender: '男')
 # User.create(id: '2', name: '武田　光栄', nick_name: 'kou00', profile_image: open("#{Rails.root}/db/user-image/m1.jpg"), postal_code: '4567890', prefecture: '愛知県', city: '名古屋市熱田区', street: '1-1-1', email: 'take@take', password: '123456', age: '20代', gender: '男')
 # User.create(id: '3', name: '明智小五郎', nick_name: 'あけち', profile_image: open("#{Rails.root}/db/user-image/m2.jpg"), postal_code: '2345678', prefecture: '神奈川県', city: '横浜市港南区', street: '1-1-1', email: 'aketi@aketi', password: '123456', age: '30代', gender: '男')
