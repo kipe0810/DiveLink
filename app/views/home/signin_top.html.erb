@@ -1,0 +1,58 @@
+<%= render 'layouts/header' %>
+  <main>
+  	<div class="signup-visual">
+			<div class="signup-visual-headline">
+			  <h1><strong>最高のダイビングをここから。</strong></h1>
+			  <img src="<%= asset_path "DiveLink_logo.png" %>" width="500px">
+			  <div class="signup-visual-btn">
+			  	<% if signed_in? %>
+			  	  <%= link_to 'ダイビングスポットを探す', genres_path, class: "btnblue", style: "position: relative; right: 50px;" %>
+			  	<% else %>
+			  	  <%= link_to '新規ユーザー登録', new_user_registration_path, class: "btnred" %>
+			  	<% end %>
+			  </div>
+			</div>
+			<div class="slideshow">
+				<img src="<%= asset_path "tunodasi.jpg" %>" class="slide-visual">
+				<img src="<%= asset_path "tubame.JPG" %>" class="slide-visual">
+				<img src="<%= asset_path "umeiro.JPG" %>" class="slide-visual">
+				<img src="<%= asset_path "hata.JPG" %>" class="slide-visual">
+				<img src="<%= asset_path "blue.JPG" %>" class="slide-visual">
+			</div>
+		</div>
+
+  	<div class="container">
+  		<div class="row">
+  			<h1 class="signintop-headline"><strong>注目のブログ</strong></h1>
+  			<div class="border"></div>
+  			<%= render 'posts/index', posts: @posts %>
+  		</div>
+  	</div>
+
+  	<div class="follow-userblog-area">
+  		<div class="container">
+  			<div class="row">
+  				<h1 class="signintop-headline"><strong>フォローのブログ</strong></h1>
+  				<div class="border"></div>
+  				<%= render 'posts/index', posts: @posts %>
+  			</div>
+  		</div>
+  	</div>
+
+
+  	<div class="container">
+			<div class="row">
+				<h1 class="pointmap-headline"><strong>ダイビングスポットを探す</strong></h1>
+				<div class="border"></div>
+				<div class="col-xs-3">
+					<div>
+						<%= render 'points/sidebar', genres: @genres %>
+					</div>
+				</div>
+				<div class="col-xs-9">
+					<%= render 'genres/map' %>
+				</div>
+			</div>
+		</div>
+  </main>
+<%= render 'layouts/footer' %>

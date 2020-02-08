@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   root :to => 'home#top'
   get '/about' => 'home#about'
+  get '/top' => 'home#signin_top', as: 'signin_top'
 
   get '/result' => 'search#search', as: 'result'
 
