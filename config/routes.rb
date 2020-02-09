@@ -31,5 +31,7 @@ Rails.application.routes.draw do
 
   get '/likes/:post_id' => 'likes#index', as: 'likes'
   get '/points/:point_id/posts' => 'points#point_posts', as: 'point_posts'
+  get '/populars' => 'posts#populars', as: 'populars'
+  get '/follow_posts' => 'posts#follows', as: 'follow_posts'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

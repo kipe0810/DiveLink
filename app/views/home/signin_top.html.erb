@@ -13,9 +13,10 @@
 			  </div>
 			</div>
 			<div class="slideshow">
-				<img src="<%= asset_path "tunodasi.jpg" %>" class="slide-visual">
+				<img src="<%= asset_path "jinbei3.JPG" %>" class="slide-visual">
 				<img src="<%= asset_path "tubame.JPG" %>" class="slide-visual">
 				<img src="<%= asset_path "umeiro.JPG" %>" class="slide-visual">
+				<img src="<%= asset_path "tunodasi.jpg" %>" class="slide-visual">
 				<img src="<%= asset_path "hata.JPG" %>" class="slide-visual">
 				<img src="<%= asset_path "blue.JPG" %>" class="slide-visual">
 			</div>
@@ -23,9 +24,11 @@
 
   	<div class="container">
   		<div class="row">
-  			<h1 class="signintop-headline"><strong>注目のブログ</strong></h1>
+  			<h1 class="signintop-headline"><strong>人気のブログ</strong></h1>
   			<div class="border"></div>
-  			<%= render 'posts/index', posts: @posts %>
+  			<%= render 'posts/index', posts: @posts_limit %>
+  			<% if @posts.count > 8 %><%= link_to 'もっと見る＞',populars_path, class: "signintop-link" %>
+  			<% end %>
   		</div>
   	</div>
 
@@ -34,7 +37,14 @@
   			<div class="row">
   				<h1 class="signintop-headline"><strong>フォローのブログ</strong></h1>
   				<div class="border"></div>
-  				<%= render 'posts/index', posts: @posts %>
+  				<% if @users.present? %>
+  				  <%= render 'posts/index', posts: @posts_follow_limit %>
+  				  <% if @posts_follow.count > 4 %>
+  				    <%= link_to 'もっと見る＞', follow_posts_path, class: "signintop-link2" %>
+  				  <% end %>
+  				<% else %>
+  				  <h3 class="signintop-text">フォローのブログはありません。</h3>
+  				<% end %>
   			</div>
   		</div>
   	</div>
@@ -42,7 +52,7 @@
 
   	<div class="container">
 			<div class="row">
-				<h1 class="pointmap-headline"><strong>ダイビングスポットを探す</strong></h1>
+				<h1 class="pointmap-headline" style="margin-top: 60px;"><strong>ダイビングスポットを探す</strong></h1>
 				<div class="border"></div>
 				<div class="col-xs-3">
 					<div>

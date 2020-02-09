@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!,  only: [:edit, :update, :destroy]
+  before_action :authenticate_user!,  only: [:edit, :update, :destroy, :follows]
   before_action :current_user!, only: [:edit, :update, :destroy]
 
 
@@ -49,6 +49,18 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
+  end
+
+  def populars
+    @ids = Like.group(:post_id).order('count(post_id) desc').pluck(:post_id)
+    @posts = Post.where(id: @ids)
+    @posts = @posts.page(params[:page]).per(20)
+  end
+
+  def follows
+    @users = current_user.followings
+    @posts = Post.where(user: @users)
+    @posts = @posts.page(params[:page]).per(20)
   end
 
   private

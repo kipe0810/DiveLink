@@ -1,12 +1,12 @@
 <%= render 'layouts/header' %>
 <div class="container">
 	<div class="row">
-		<h1 class="post-index-headline"><strong>ブログ一覧</strong></h1>
+		<h1 class="post-index-headline"><strong>人気のブログ</strong></h1>
 		<div class="border"></div>
 		<%= render 'posts/index', posts: @posts %>
-		<div style="text-align: center;">
-			<%= paginate @posts %>
-		</div>
+	</div>
+	<div style="text-align: center;">
+		<%= paginate @posts %>
 	</div>
 </div>
 <%= render 'layouts/footer' %>
