@@ -3,7 +3,7 @@
 		<div style="float: left; margin: 0 15px 30px 15px;">
 		  <%= link_to post_path(f.id) do %>
 		    <%= image_tag attachment_url(f, :main_image, :fill, 250, 200, fallback: "no_image.png"), size:'250x200', class: "post-index-img" %>
-		    <h3 class="post-title-index"><strong><%= f.title.truncate(10, omission: '…') %></strong></h3>
+		    <h3 class="post-title-index"><strong style="text-decoration: none;"><%= f.title.truncate(10, omission: '…') %></strong></h3>
 		  <% end %>
 		  <%= f.created_at.strftime('%Y/%m/%d %H:%M') %>
 		  <span class="post-icon-area" style="background-color: rgb(0, 0, 0, 0.5); color: white;">

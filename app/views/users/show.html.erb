@@ -8,8 +8,8 @@
 			</div>
 			<div class="profile-table col-xs-5">
 				<h2 class="profile-headline">Profile</h2>
-				<%= link_to "フォロー", follows_user_path(@user.id) %> <%= @user.followings.count %>
-				 | <%= link_to "フォロワー", followers_user_path(@user.id) %> <%= @user.followers.count %>
+				<strong><%= link_to "フォロー", follows_user_path(@user.id), style: "text-decoration: none; color: #0066FF;" %></strong> <strong><%= @user.followings.count %></strong>
+				 | <strong><%= link_to "フォロワー", followers_user_path(@user.id), style: "text-decoration: none; color: #0066FF;" %></strong> <strong style="margin-right: 20px;"><%= @user.followers.count %></strong>
 				<% if signed_in? %>
 					<% if @user == current_user %>
 						<%= link_to '編集', edit_user_path(@user), class: "btnblue-default" %>
@@ -53,7 +53,7 @@
 					<% if @user.point.present? %>
 						<tr>
 							<th>お気に入りのポイント</th>
-							<td><%= link_to @user.point.point_name, point_path(id: @user.point_id),style: "color: black; text-decoration: none;" %></td>
+							<td><strong><%= link_to @user.point.point_name, point_path(id: @user.point_id),style: "color: #0066FF; text-decoration: none;" %></strong></td>
 						</tr>
 					<% end %>
 					<tr>
@@ -71,11 +71,21 @@
 				</table>
 			</div>
 	</div>
-
-  <div class="row">
-  	<h2 style="text-align: center; margin: 70px 0 40px 0;"><%= @user.nick_name %>さんのブログ</h2>
-  	<%= render 'posts/index', posts: @posts %>
+</div>
+<div style="width: 100%; background-color: #EEEEEE;">
+	<div class="container">
+		<div class="row">
+			<h1 style="text-align: center; margin-top: 70px; margin-bottom: 0;"><%= @user.nick_name %>さんのブログ（<%= @user.posts.count %>）</h1>
+			<div class="border"></div>
+			<% if @posts.present? %>
+			  <%= render 'posts/index', posts: @posts %>
+				<div style="text-align: center;">
+					<%= paginate @posts %>
+				</div>
+			<% else %>
+			<h3 style="text-align: center; padding-bottom: 60px;"><%= @user.nick_name %>さんのブログはまだありません。</h3>
+			<% end %>
+		</div>
   </div>
-
 </div>
 <%= render 'layouts/footer' %>
