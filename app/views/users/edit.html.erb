@@ -76,7 +76,7 @@
 				  	</tr>
 				  </table>
 				  <%= f.submit '保存', class: "btnwhite" %><br><br>
-				  <%= link_to '＜マイページへ戻る', user_path(current_user) %><br><br>
+				  <strong><%= link_to '＜マイページへ戻る', user_path(current_user), style: "color: #0066FF; text-decoration: none;" %></strong><br><br>
 				  <%= link_to 'アカウント削除', user_path(current_user.id), method: :delete, data: {confirm: "アカウントが消去されます。よろしいですか？"}, class: "btnred-header" %>
 
 

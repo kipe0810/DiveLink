@@ -1,7 +1,7 @@
 <div class="col-xs-12">
 	<% posts.each do |f| %>
 		<div style="float: left; margin: 0 15px 30px 15px;">
-		  <%= link_to post_path(f.id) do %>
+		  <%= link_to post_path(f.id), style: "text-decoration: none;" do %>
 		    <%= image_tag attachment_url(f, :main_image, :fill, 250, 200, fallback: "no_image.png"), size:'250x200', class: "post-index-img" %>
 		    <h3 class="post-title-index"><strong style="text-decoration: none;"><%= f.title.truncate(10, omission: '…') %></strong></h3>
 		  <% end %>
@@ -10,13 +10,13 @@
 		  	<i class="fas fa-heart" style="color: white;"></i> <%= f.likes.count %>
 		  	<i class="fas fa-comment" style="color: white; padding-left: 8px;"></i> <%= f.post_comments.count %>
 		  </span><br>
-		  <%=link_to user_path(f.user) do %>
+		  <%=link_to user_path(f.user), style: "text-decoration: none;" do %>
 		    <div>
 			    <%= image_tag attachment_url(f.user, :profile_image, :fill, 32, 32, fallback: "no_image.png"), size:'32x32', class: "profile-image" %>
 			    <p class="user-name-post"><%= f.user.nick_name %></p>
 		    </div>
 		  <% end %>
-		  <p class="post-pointname"><%= link_to f.point.point_name, point_path(f.point.id), style: "padding: 5px 10px; color: white; background-color: rgb(0, 0, 0, 0.5); border-radius: 20px;" %></p>
+		  <p class="post-pointname"><%= link_to f.point.point_name, point_path(f.point.id), style: "padding: 5px 10px; color: white; background-color: rgb(0, 0, 0, 0.5); border-radius: 20px; text-decoration: none;" %></p>
 		 </div>
 	<% end %>
 </div>

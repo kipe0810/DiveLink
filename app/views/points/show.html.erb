@@ -19,13 +19,13 @@
 	<div style="width: 100%; background-color: #EEEEEE; padding: 15px 0 30px 0; ">
 		<div class="container" style="margin-top: 50px;">
 			<div class="row">
-				<h2 style="text-align: center;"><strong><%= @point.point_name %>のブログ</strong></h2>
+				<h2 style="text-align: center; margin-bottom: 0;"><strong><%= @point.point_name %>のブログ</strong></h2>
 				<div class="border"></div>
 				<% if @posts.present? %>
 				  <%= render 'posts/index', posts: @posts_randum %>
 				  <% if @posts.count > 4 %>
 				    <div>
-				    	<strong><%= link_to 'もっと見る＞', point_posts_path(@point.id), class: "signintop-link2" %></strong>
+				    	<strong><%= link_to 'もっと見る＞', point_posts_path(@point.id), class: "signintop-link2", style: "text-decoration: none;" %></strong>
 				    </div>
 				  <% end %>
 				<% else %>

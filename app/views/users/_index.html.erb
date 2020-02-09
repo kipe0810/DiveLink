@@ -1,11 +1,18 @@
 <div style="float: left; margin: 0 15px 30px 15px; text-align: center; width: 200px; height: 320px;">
-	<%= link_to user_path(users.id) do %>
+	<%= link_to user_path(users.id), style: "text-decoration: none;" do %>
 	  <%= image_tag attachment_url(users, :profile_image, :fill, 200, 200, fallback: "no_image.png"), size: '200x200', class: "profile-image-index" %>
 	  <h3 class="user-name-index"><strong><%= users.nick_name %></strong></h3>
 	<% end %>
-	<i class="fas fa-book"></i> <%= users.posts.count %>
-	<%=link_to "フォロー", follows_user_path(users.id) %><%= users.followings.count %>
-	 | <%=link_to "フォロワー", followers_user_path(users.id) %><%= users.followers.count %><br>
+	<i class="fas fa-book"></i>
+	<strong><%= users.posts.count %></strong>
+	<strong>
+		<%=link_to "フォロー", follows_user_path(users.id), style: "text-decoration: none; color: #0066FF;" %>
+	</strong>
+	<strong>
+		<%= users.followings.count %>
+	</strong>
+	 | <strong><%=link_to "フォロワー", followers_user_path(users.id), style: "text-decoration: none; color: #0066FF;" %></strong>
+	 <strong><%= users.followers.count %></strong><br>
 	<% if signed_in? %>
   	<% if users != current_user %>
 	  	<% if users.followed_by?(current_user) %>
