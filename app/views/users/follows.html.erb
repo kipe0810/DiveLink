@@ -9,6 +9,9 @@
         <%= render 'users/index', users: f %>
       <% end %>
     </div>
+    <div style="text-align: center;">
+    	<%= paginate @users %>
+    </div>
 	</div>
 </div>
 <%= render 'layouts/footer' %>
