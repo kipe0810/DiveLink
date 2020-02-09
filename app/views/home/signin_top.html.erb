@@ -27,7 +27,8 @@
   			<h1 class="signintop-headline"><strong>人気のブログ</strong></h1>
   			<div class="border"></div>
   			<%= render 'posts/index', posts: @posts_limit %>
-  			<% if @posts.count > 8 %><%= link_to 'もっと見る＞',populars_path, class: "signintop-link" %>
+  			<% if @posts.count > 8 %>
+  			  <strong><%= link_to 'もっと見る＞',populars_path, class: "signintop-link", style: "text-decoration: none;" %></strong>
   			<% end %>
   		</div>
   	</div>
@@ -40,7 +41,7 @@
   				<% if @users.present? %>
   				  <%= render 'posts/index', posts: @posts_follow_limit %>
   				  <% if @posts_follow.count > 4 %>
-  				    <%= link_to 'もっと見る＞', follow_posts_path, class: "signintop-link2" %>
+  				    <strong><%= link_to 'もっと見る＞', follow_posts_path, class: "signintop-link2", style: "text-decoration: none;" %></strong>
   				  <% end %>
   				<% else %>
   				  <h3 class="signintop-text">フォローのブログはありません。</h3>

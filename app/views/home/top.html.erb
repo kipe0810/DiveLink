@@ -68,7 +68,7 @@
 				<h1><strong>人気のブログ</strong></h1>
 				<div class="border"></div>
 				<%= render 'posts/index', posts: @posts %>
-				<p style="color: red; text-align: right; font-size: 20px;"><%= link_to 'もっと見る＞', populars_path %></p>
+				<strong><%= link_to 'もっと見る＞', populars_path, class: "top-link", style: "text-decoration: none;" %></strong>
 			</div>
 		</div>
 	</div>
