@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.page(params[:page]).per(20)
+    @posts = Post.all.order(created_at: :desc).page(params[:page]).per(20)
   end
 
   def show
@@ -52,9 +52,7 @@ class PostsController < ApplicationController
   end
 
   def populars
-    @ids = Like.group(:post_id).order('count(post_id) desc').pluck(:post_id)
-    @posts = Post.where(id: @ids)
-    @posts = @posts.page(params[:page]).per(20)
+    @posts = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(20).pluck(:post_id))
   end
 
   def follows
