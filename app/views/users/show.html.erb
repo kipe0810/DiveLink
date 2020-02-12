@@ -97,19 +97,23 @@
 		    <div id="tab02">
 		    	<h1 style="text-align: center; margin-top: 40px; margin-bottom: 0;"><%= @user.nick_name %>さんの行ったポイント</h1>
 		    	<div class="border"></div>
-		    	<div class="col-xs-12">
-		    		<% @points.each do |p| %>
-		    		  <div style="float: left; margin: 0 15px 30px 15px;">
-		    		  	<%= link_to point_path(p.id), style: "text-decoration: none;" do %>
-		    		  	  <%= image_tag attachment_url(p, :point_image, :fill, 250, 200, fallback: "no_image.png"), size:'250x200', class: "post-index-img" %>
-		    		  	  <h3><strong><%= p.point_name.truncate(10, omission: '…') %></strong></h3>
-		    		  	<% end %>
-		    		  </div>
-		    		<% end %>
-		    	</div>
-		    	<div style="text-align: center;">
-		    		<%= paginate @points %>
-		    	</div>
+		    	<% if @points.present? %>
+			    	<div class="col-xs-12">
+			    		<% @points_page.each do |p| %>
+			    		  <div style="float: left; margin: 0 15px 30px 15px;">
+			    		  	<%= link_to point_path(p.id), style: "text-decoration: none;" do %>
+			    		  	  <%= image_tag attachment_url(p, :point_image, :fill, 250, 200, fallback: "no_image.png"), size:'250x200', class: "post-index-img" %>
+			    		  	  <h3 style="color: black;"><strong><%= p.point_name.truncate(10, omission: '…') %></strong></h3>
+			    		  	<% end %>
+			    		  </div>
+			    		<% end %>
+			    	</div>
+			    	<div style="text-align: center;">
+			    		<%= paginate @points_page %>
+			    	</div>
+			    <% else %>
+			      <h3 style="text-align: center; padding-bottom: 117px;"><%= @user.nick_name %>さんの行ったポイントはまだありません。</h3>
+			    <% end %>
 		    </div>
 			</div>
 		</div>
