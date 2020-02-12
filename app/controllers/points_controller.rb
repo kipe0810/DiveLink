@@ -18,7 +18,7 @@ class PointsController < ApplicationController
 		@genres = Genre.all
 		@point = Point.find(params[:point_id])
 		@posts = Post.where(point_id: @point.id)
-		@posts_page = @posts.page(params[:page]).per(15)
+		@posts_page = @posts.all.order(created_at: :desc).page(params[:page]).per(15)
 	end
 
 end

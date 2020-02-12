@@ -173,13 +173,31 @@
 
 
 
-
-
-
-
-
-
-
+.tabnav{
+  text-align: center;
+  margin-top: 40px;
+}
+.tabnav li{
+  display: inline;
+}
+.tabnav li a{
+	width: 120px;
+  display: inline-block;
+  background: #ddd;
+  color: #333;
+  padding: 10px;
+  margin-right: 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.tabnav li a:hover {
+	background-color: #CCC;
+}
+.tabnav li a.active{
+  background: #2C7CFF;
+  color: #fff;
+}
 
 
 

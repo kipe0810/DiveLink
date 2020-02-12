@@ -2,7 +2,8 @@
 <div class="container">
 	<div class="row">
 		<h1 class="post-index-headline"><strong>ブログ一覧</strong></h1>
-		<div class="border"></div>
+		<div class="border" style="margin-bottom: 10px;"></div>
+		<%= link_to '+', new_post_path, class: "newpost-btn", style: "float: right; position: relative; bottom: 67px;" %>
 		<%= render 'posts/index', posts: @posts %>
 		<div style="text-align: center;">
 			<%= paginate @posts %>

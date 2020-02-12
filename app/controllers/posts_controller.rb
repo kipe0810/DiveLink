@@ -58,7 +58,7 @@ class PostsController < ApplicationController
   def follows
     @users = current_user.followings
     @posts = Post.where(user: @users)
-    @posts = @posts.page(params[:page]).per(20)
+    @posts = @posts.all.order(created_at: :desc).page(params[:page]).per(20)
   end
 
   private

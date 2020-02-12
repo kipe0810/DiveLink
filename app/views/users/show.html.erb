@@ -72,20 +72,52 @@
 			</div>
 	</div>
 </div>
+
 <div style="width: 100%; background-color: #EEEEEE;">
 	<div class="container">
 		<div class="row">
-			<h1 style="text-align: center; margin-top: 70px; margin-bottom: 0;"><%= @user.nick_name %>さんのブログ（<%= @user.posts.count %>）</h1>
-			<div class="border"></div>
-			<% if @posts.present? %>
-			  <%= render 'posts/index', posts: @posts %>
-				<div style="text-align: center;">
-					<%= paginate @posts %>
-				</div>
-			<% else %>
-			<h3 style="text-align: center; padding-bottom: 60px;"><%= @user.nick_name %>さんのブログはまだありません。</h3>
-			<% end %>
+			<ul class="tabnav">
+		    <li><a href="#tab01"><strong>BLOG</strong></a></li>
+		    <li><a href="#tab02"><strong>POINT</strong></a></li>
+			</ul>
+			<div class="tabcontent">
+		    <div id="tab01">
+		    	<h1 style="text-align: center; margin-top: 40px; margin-bottom: 0;"><%= @user.nick_name %>さんのブログ（<%= @user.posts.count %>）</h1>
+					<div class="border"></div>
+					<% if @posts.present? %>
+					  <%= render 'posts/index', posts: @posts %>
+						<div style="text-align: center;">
+							<%= paginate @posts %>
+						</div>
+					<% else %>
+					<h3 style="text-align: center; padding-bottom: 60px;"><%= @user.nick_name %>さんのブログはまだありません。</h3>
+					<% end %>
+					<%= link_to '+', new_post_path, class: "newpost-btn", style: "float: right; position: relative; bottom: 822px;" %>
+		    </div>
+		    <div id="tab02">
+		    	<h1 style="text-align: center; margin-top: 40px; margin-bottom: 0;"><%= @user.nick_name %>さんの行ったポイント</h1>
+		    	<div class="border"></div>
+		    	<div class="col-xs-12">
+		    		<% @points.each do |p| %>
+		    		  <div style="float: left; margin: 0 15px 30px 15px;">
+		    		  	<%= link_to point_path(p.id), style: "text-decoration: none;" do %>
+		    		  	  <%= image_tag attachment_url(p, :point_image, :fill, 250, 200, fallback: "no_image.png"), size:'250x200', class: "post-index-img" %>
+		    		  	  <h3><strong><%= p.point_name.truncate(10, omission: '…') %></strong></h3>
+		    		  	<% end %>
+		    		  </div>
+		    		<% end %>
+		    	</div>
+		    	<div style="text-align: center;">
+		    		<%= paginate @points %>
+		    	</div>
+		    </div>
+			</div>
 		</div>
   </div>
 </div>
+
+
+
+
+
 <%= render 'layouts/footer' %>
