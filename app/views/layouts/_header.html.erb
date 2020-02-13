@@ -8,7 +8,7 @@
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, deta: {confirm: "ログアウトします。よろしいですか？"}, class: "btn btnred-header" %>
       </span>
       <span class="login login-name">
-        <%= link_to current_user.nick_name, user_path(current_user) %>さんがログイン中
+        <strong><%= link_to current_user.nick_name, user_path(current_user), style: "color: #0066FF; text-decoration: none;" %></strong>さんがログイン中
       </span>
     </div>
     <div class="nav-list">

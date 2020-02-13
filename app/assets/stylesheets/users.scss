@@ -46,8 +46,12 @@
 
 .profile-image-index {
 	border-radius: 50%;
+	transition-duration: 0.2s;
 }
-
+.profile-image-index:hover {
+	opacity: 0.6;
+	transition-duration: 0.2s;
+}
 
 
 
