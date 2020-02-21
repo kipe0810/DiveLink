@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts
     @posts = @posts.all.order(created_at: :desc).page(params[:page]).per(12)
+
     @ids = @user.posts.pluck(:point_id)
     @points = Point.where(id: @ids)
     @points_page = @points.page(params[:page]).per(12)

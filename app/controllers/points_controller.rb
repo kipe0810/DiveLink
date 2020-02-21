@@ -11,7 +11,7 @@ class PointsController < ApplicationController
 		@backpoint = @point.id - 1
 		@nextpoint = @point.id + 1
 		@posts = Post.where(point_id: @point.id)
-		@posts_randum = @posts.sample(4)
+		@posts_random = @posts.sample(4)
 	end
 
 	def point_posts

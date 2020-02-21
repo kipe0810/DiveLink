@@ -11,9 +11,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
-    # randumにしたい
+
     @posts = Post.where(point_id: @post.point_id).where.not(id: @post.id)
-    @posts_randum = @posts.sample(4)
+    @posts_random = @posts.sample(4)
   end
 
   def new
