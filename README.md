@@ -1,24 +1,40 @@
-# README
+# DiveLink
+DiveLinkは「ダイビングで繋がる」をコンセプトにした、ダイバー専用のSNSです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+自分のダイビングを共有したり、ダイビングスポットを探したりすることができます。
 
-Things you may want to cover:
+## 機能一覧
+* フォロー機能
+* いいね機能
+* コメント機能
+* ブログ投稿機能（画像の複数投稿も可能）
+* ユーザー・ブログ・ダイビングスポットの検索機能
 
-* Ruby version
+## インフラ
+AWS
 
-* System dependencies
+## Ruby
+ruby-2.5.7
 
-* Configuration
+## Rails
+rails-5.2.4
 
-* Database creation
+## Gem
+* devise
+* refile
+* refile-mini_magick
+* bootstrap
+* jquery-rails
+* font-awsome
+* jp-prefecture
+* dotenv-rails
+* kaminari
 
-* Database initialization
+## ライセンス
+MIT license
 
-* How to run the test suite
+## 作者
+nakade kippei
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...

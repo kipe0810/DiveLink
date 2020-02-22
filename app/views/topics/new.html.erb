@@ -1,0 +1,23 @@
+<div class="body">
+	<a href="/top">
+		<img src="<%= asset_path "DiveLink_logo.png" %>" width="250px;">
+	</a>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3" style="text-align: center;">
+				<div class="form-area" style="margin-bottom: 250px;">
+					<h2 style="margin-bottom: 20px;">新規投稿</h2>
+					<%= form_for(@topic) do |f| %>
+					  <table class="table">
+					  	<tr>
+					  		<th>本文</th>
+					  		<td><%= f.text_area :body, class: "form-control", style:"width: 100%; height: 200px;" %></td>
+					  	</tr>
+					  </table>
+					  <%= f.submit class: "btnblue-default" %>
+          <% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+<%= render 'layouts/header' %>
+<div class="topic-area">
+	<div class="container">
+		<div class="row">
+			<h1 class="post-index-headline"><strong>掲示板</strong></h1>
+			<div class="border" style="margin-bottom: 10px;"></div>
+			<%= link_to '+', new_topic_path, class: "newpost-btn", style: "float: right; position: relative; bottom: 67px;" %>
+			<% @topics.each do |t| %>
+			  <p class="topic-body"><%= t.body %></p>
+			  <%= t.user.nick_name %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+
+<%= render 'layouts/footer' %>

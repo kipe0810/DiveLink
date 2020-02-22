@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :post_comments, only: [:create, :destroy]
   end
 
+  resources :topics
+
   resources :genres, only: [:index, :show]
 
   resources :points, only: [:index, :show]
