@@ -6,8 +6,15 @@
 			<div class="border" style="margin-bottom: 10px;"></div>
 			<%= link_to '+', new_topic_path, class: "newpost-btn", style: "float: right; position: relative; bottom: 67px;" %>
 			<% @topics.each do |t| %>
-			  <p class="topic-body"><%= t.body %></p>
-			  <%= t.user.nick_name %>
+			  <div class="topic">
+				  <%= link_to user_path(t.user), class: "topic-user-link" do %>
+				    <div class="topic-user-linkarea">
+				    	<%= image_tag attachment_url(t.user, :profile_image, :fill, 32, 32, fallback: "no_image.png"), size:'32x32', class: "topic-profile-image" %>
+				      <p class="topic-user-name"><%= t.user.nick_name %></p>
+				    </div>
+				  <% end %>
+				  <p class="topic-body"><%= t.body %></p>
+				</div>
 			<% end %>
 		</div>
 	</div>
