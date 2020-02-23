@@ -6,6 +6,11 @@ class TopicsController < ApplicationController
   	@topics = Topic.all.order(created_at: :desc).page(params[:page]).per(20)
   end
 
+  def show
+  	@topic = Topic.find(params[:id])
+  	@topic_comment = TopicComment.new
+  end
+
   def edit
   end
 
@@ -21,6 +26,12 @@ class TopicsController < ApplicationController
   	else
   		render 'new'
   	end
+  end
+
+  def destroy
+  	@topic = Topic.find(params[:id])
+  	@topic.destroy
+  	redirect_to topics_path
   end
 
   private

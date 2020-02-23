@@ -1,0 +1,20 @@
+<%= render 'layouts/header' %>
+<div class="topic-area">
+	<div class="topic-show">
+		<%= link_to user_path(@topic.user), class: "topic-user-link" do %>
+		  <div class="topic-user-linkarea">
+		  	<%= image_tag attachment_url(@topic.user, :profile_image, :fill, 32, 32, fallback: "no_image.png"), size:'32x32', class: "topic-profile-image" %>
+		  	<p class="topic-user-name"><%= @topic.user.nick_name %></p>
+		  </div>
+		<% end %>
+		<p class="topic-body"><%= @topic.body %></p>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div id="comments_area">
+				<%= render 'topic_comments/comment', topic: @topic, topic_comment: @topic_comment %>
+			</div>
+		</div>
+	</div>
+</div>
+<%= render 'layouts/footer' %>
