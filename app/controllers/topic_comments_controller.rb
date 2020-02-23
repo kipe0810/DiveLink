@@ -1,4 +1,6 @@
 class TopicCommentsController < ApplicationController
+	before_action :authenticate_user!, only: [:create, :destroy]
+
 	def create
 		@topic = Topic.find(params[:topic_id])
 		@comment = current_user.topic_comments.new(topic_comment_params)

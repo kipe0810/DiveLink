@@ -16,9 +16,11 @@
   <div class="clear"></div>
 <% end %>
 
-<div class="topic-comment">
-	<%= form_with model:[topic, topic_comment] do |t| %>
-	  <%= t.text_area :body, class: "form-control", placeholder: "コメント" %>
-	  <%= t.submit "投稿", class: "btn btn-default" %>
-	<% end %>
-</div>
+<% if user_signed_in? %>
+	<div class="topic-comment">
+		<%= form_with model:[topic, topic_comment] do |t| %>
+		  <%= t.text_area :body, class: "form-control", placeholder: "コメント" %>
+		  <%= t.submit "投稿", class: "btn btn-default" %>
+		<% end %>
+	</div>
+<% end %>
